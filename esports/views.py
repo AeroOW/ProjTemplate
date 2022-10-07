@@ -44,9 +44,9 @@ def esport_list(request):
     if request.method == 'GET':
         esports = esport.objects.all()
 
-        title = request.GET.get('title', None)
-        if title is not None:
-            esports = esports.filter(title__icontains=title)
+        name = request.GET.get('name', None)
+        if name is not None:
+            esports = esports.filter(name__icontains=name)
 
         esports_serializer = esportserializer(esports, many=True)
         return JsonResponse(esports_serializer.data, safe=False)
