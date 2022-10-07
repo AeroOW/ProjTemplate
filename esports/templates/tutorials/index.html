@@ -1,0 +1,11 @@
+{% extends "esports/base.html" %} {% load static %}{% block title %} esports
+{% endblock%} {% block content%}
+<div class="container">
+  <h1>esports</h1>
+  <ul>
+    {% for esport in esports %}
+    <li>{{ esport.title }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %} {% block jsfiles %} {% endblock jsfiles %}
