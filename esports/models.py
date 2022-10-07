@@ -1,9 +1,9 @@
 from django.db import models
 
 
-class esport(models.Model):
-    title = models.CharField(max_length=70, blank=False, default='')
-    esport_url = models.CharField(max_length=200, blank=False, default='')
-    image_path = models.CharField(max_length=150, blank=True, null=True)
-    description = models.CharField(max_length=200, blank=False, default='')
-    published = models.BooleanField(default=False)
+class Esport(models.Model):
+    name = models.CharField(max_length=70, blank=False, default='')
+    developer = models.CharField(max_length=70, blank=False, default='')
+    type = models.CharField(max_length=70, blank=False, default='PC/Console')
+    prize_pool = models.CharField(max_length=70, blank=False, default='')
+    peak_viewership = models.CharField(max_length=70, blank=False, default='')

@@ -100,8 +100,16 @@ def esport_detail(request, pk):
 
 
 @api_view(['GET'])
-def esport_list_published(request):
-    esports = esport.objects.filter(published=True)
+def esport_list_pc(request):
+    esports = esport.objects.filter(type="PC/Console")
+
+    if request.method == 'GET':
+        esports_serializer = esportserializer(esports, many=True)
+        return JsonResponse(esports_serializer.data, safe=False)
+
+@api_view(['GET'])
+def esport_list_mobile(request):
+    esports = esport.objects.filter(type="Mobile")
 
     if request.method == 'GET':
         esports_serializer = esportserializer(esports, many=True)

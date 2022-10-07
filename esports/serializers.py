@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from esports.models import esport
+from esports.models import Esport
 
 
 class esportserializer(serializers.ModelSerializer):
     class Meta:
-        model = esport
-        fields = ('id', 'title', 'esport_url', 'image_path', 'description',
-                  'published')
+        model = Esport
+        fields = ('id', 'name', 'developer', 'type', 'prize_pool',
+                  'peak_viewership')
