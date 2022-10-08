@@ -6,7 +6,7 @@ from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from esports.models import esport
+from esports.models import Esport
 from esports.serializers import esportserializer
 from rest_framework.decorators import api_view
 
